@@ -1,0 +1,445 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>js基础算法 · 前端面试资料</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="cholee">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../webpk/" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://cholee.cn" target="_blank" class="custom-link">个人博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    js基础算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">webpack详解</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../webpk/">
+            
+                <a href="../webpk/">
+            
+                    
+                    webpack 基础介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../webpk/">
+            
+                <a href="../webpk/#modules">
+            
+                    
+                    模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../webpk/">
+            
+                <a href="../webpk/#modules">
+            
+                    
+                    模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../webpk/">
+            
+                <a href="../webpk/#modules">
+            
+                    
+                    模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../webpk/">
+            
+                <a href="../webpk/#modules">
+            
+                    
+                    模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >js基础算法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#&#x6570;&#x7EC4;&#x53BB;&#x91CD;"><b></b>&#x6570;&#x7EC4;&#x53BB;&#x91CD;</a></li><li><span class="title-icon "></span><a href="#&#x5192;&#x6CE1;&#x6392;&#x5E8F;"><b></b>&#x5192;&#x6CE1;&#x6392;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#&#x5FEB;&#x901F;&#x6392;&#x5E8F;"><b></b>&#x5FEB;&#x901F;&#x6392;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#&#x5192;&#x6CE1;"><b></b>&#x5192;&#x6CE1;</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="&#x6570;&#x7EC4;&#x53BB;&#x91CD;"><a name="&#x6570;&#x7EC4;&#x53BB;&#x91CD;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x7EC4;&#x53BB;&#x91CD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x7EC4;&#x53BB;&#x91CD;</h2>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">qc</span>(<span class="hljs-params">arr1</span>) </span>{
+  <span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6570;&#x7EC4;</span>
+  <span class="hljs-keyword">let</span> arr = [];
+  <span class="hljs-comment">//&#x904D;&#x5386;&#x6570;&#x7EC4;arr1</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr1.length; i++) {
+    <span class="hljs-comment">//&#x5982;&#x679C;arr1&#x4E0D;&#x5728;arr&#x4E2D; &#x4F1A;&#x8FD4;&#x56DE;-1 &#x90A3;&#x4E48;&#x5C06;&#x548C;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x5B58;&#x5728;&#x65B0;&#x5EFA;&#x7684;arr&#x4E2D;</span>
+    <span class="hljs-keyword">if</span> (arr.indexOf(arr1[i]) == <span class="hljs-number">-1</span>) {
+      arr.push(arr1[i]);
+    }
+  }
+  <span class="hljs-comment">//&#x8FD4;&#x56DE;arr</span>
+  <span class="hljs-keyword">return</span> arr;
+}
+arr1 = [<span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;3&quot;</span>, <span class="hljs-string">&quot;5&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>, <span class="hljs-string">&quot;24&quot;</span>, <span class="hljs-string">&quot;4&quot;</span>, <span class="hljs-string">&quot;4&quot;</span>, <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>];
+
+<span class="hljs-built_in">console</span>.log(qc(arr1));
+<span class="hljs-comment">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;[&quot;1&quot;, &quot;3&quot;, &quot;5&quot;, &quot;2&quot;, &quot;24&quot;, &quot;4&quot;, &quot;a&quot;, &quot;b&quot;]</span>
+</code></pre>
+<h2 id="&#x5192;&#x6CE1;&#x6392;&#x5E8F;"><a name="&#x5192;&#x6CE1;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x5192;&#x6CE1;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5192;&#x6CE1;&#x6392;&#x5E8F;</h2>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sort</span>(<span class="hljs-params">elements</span>) </span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; elements.length - <span class="hljs-number">1</span>; i++) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j = <span class="hljs-number">0</span>; j &lt; elements.length - i - <span class="hljs-number">1</span>; j++) {
+      <span class="hljs-comment">//&#x4E24;&#x4E2A;for&#x5FAA;&#x73AF; &#x4F9D;&#x6B21;&#x6BD4;&#x8F83; &#x628A;&#x8F83;&#x5927;&#x7684;&#x6570;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x7ED9;&#x540E;&#x9762; &#x4F9D;&#x6B21;&#x7C7B;&#x63A8; &#x8FBE;&#x5230;&#x6392;&#x5E8F;&#x7684;&#x7ED3;&#x679C;</span>
+      <span class="hljs-keyword">if</span> (elements[j] &gt; elements[j + <span class="hljs-number">1</span>]) {
+        <span class="hljs-keyword">var</span> swap = elements[j];
+        elements[j] = elements[j + <span class="hljs-number">1</span>];
+        elements[j + <span class="hljs-number">1</span>] = swap;
+      }
+    }
+  }
+  <span class="hljs-keyword">return</span> elements;
+}
+<span class="hljs-keyword">var</span> elements = [<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">9</span>, <span class="hljs-number">6</span>];
+<span class="hljs-built_in">console</span>.log(sort(elements));
+<span class="hljs-comment">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;[1, 3, 5, 6, 9]</span>
+</code></pre>
+<h2 id="&#x5FEB;&#x901F;&#x6392;&#x5E8F;"><a name="&#x5FEB;&#x901F;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x5FEB;&#x901F;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5FEB;&#x901F;&#x6392;&#x5E8F;</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> quicksort = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">arr</span>) </span>{
+  <span class="hljs-keyword">if</span> (arr.length &lt;= <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">return</span> arr;
+  }
+  <span class="hljs-comment">//&#x53D6;&#x4E2D;&#x95F4;&#x503C;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6807;&#x6746;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;</span>
+  <span class="hljs-keyword">var</span> midIndex = <span class="hljs-built_in">Math</span>.floor(arr.length / <span class="hljs-number">2</span>);
+  <span class="hljs-keyword">var</span> midIndexVal = arr.splice(midIndex, <span class="hljs-number">1</span>);
+  <span class="hljs-comment">//&#x65B0;&#x5EFA;&#x4E24;&#x4E2A;&#x6570;&#x7EC4;&#x5B58;&#x653E;&#x6BD4;&#x4E2D;&#x95F4;&#x503C;&#x5927;&#x7684;&#x6216;&#x8005;&#x5C0F;&#x7684;</span>
+  <span class="hljs-keyword">var</span> left = [];
+  <span class="hljs-keyword">var</span> right = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) {
+    <span class="hljs-keyword">if</span> (arr[i] &lt; midIndexVal) {
+      <span class="hljs-comment">//&#x5982;&#x679C;&#x6BD4;&#x4E2D;&#x95F4;&#x503C;&#x5C0F;&#x653E;&#x5728;&#x5DE6;&#x9762;</span>
+      left.push(arr[i]);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">//&#x5982;&#x679C;&#x6BD4;&#x4E2D;&#x95F4;&#x503C;&#x5927;&#x653E;&#x5728;&#x53F3;&#x9762;</span>
+      right.push(arr[i]);
+    }
+  }
+  <span class="hljs-comment">//&#x4F9D;&#x6B21;&#x5C06;&#x4E24;&#x8FB9;&#x7684;&#x6570;&#x7EC4;&#x5728;&#x8C03;&#x7528;quicksort&#x51FD;&#x6570;&#x6700;&#x540E;&#x8FDB;&#x884C;concat&#x8FDE;&#x63A5;&#x6570;&#x7EC4;</span>
+  <span class="hljs-keyword">return</span> quicksort(left).concat(midIndexVal, quicksort(right));
+};
+<span class="hljs-keyword">var</span> b = [<span class="hljs-number">1</span>, <span class="hljs-number">6</span>, <span class="hljs-number">2</span>, <span class="hljs-number">8</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">70</span>, <span class="hljs-number">50</span>, <span class="hljs-number">30</span>];
+<span class="hljs-built_in">console</span>.log(quicksort(b));
+<span class="hljs-comment">//[1, 2, 3, 4, 6, 8, 30, 50, 70]</span>
+</code></pre>
+<h2 id="&#x5192;&#x6CE1;"><a name="&#x5192;&#x6CE1;" class="anchor-navigation-ex-anchor" href="#&#x5192;&#x6CE1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5192;&#x6CE1;</h2>
+<pre><code class="lang-js"><span class="hljs-comment">//&#x9636;&#x4E58;&#x7B97;&#x6CD5;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jiecheng</span>(<span class="hljs-params">num</span>) </span>{
+  <span class="hljs-keyword">if</span> (num == <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+  }
+  <span class="hljs-keyword">return</span> num * jiecheng(num - <span class="hljs-number">1</span>);
+}
+<span class="hljs-built_in">console</span>.log(jiecheng(<span class="hljs-number">5</span>));
+
+<span class="hljs-comment">//&#x6590;&#x6CE2;&#x62C9;&#x5951;&#x9898; 1&#xFF0C; 1&#xFF0C; 2&#xFF0C; 3&#xFF0C; 5&#xFF0C; 8&#xFF0C; 13&#xFF0C; 21 &#x3002;&#x3002;&#x3002;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fei</span>(<span class="hljs-params">num</span>) </span>{
+  <span class="hljs-keyword">if</span> (num == <span class="hljs-number">0</span> || num == <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+  }
+  <span class="hljs-keyword">return</span> fei(num - <span class="hljs-number">1</span>) + fei(num - <span class="hljs-number">2</span>);
+}
+<span class="hljs-built_in">console</span>.log(fei(<span class="hljs-number">5</span>));
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 目录结构">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../webpk/" class="navigation navigation-next " aria-label="Next page: webpack 基础介绍">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"js基础算法","level":"1.2","depth":1,"next":{"title":"webpack 基础介绍","level":"2.1","depth":1,"path":"webpk/README.md","ref":"webpk/README.md","articles":[{"title":"模块化","level":"2.1.1","depth":2,"anchor":"#modules","path":"webpk/README.md","ref":"webpk/README.md#modules","articles":[]},{"title":"模块化","level":"2.1.2","depth":2,"anchor":"#modules","path":"webpk/README.md","ref":"webpk/README.md#modules","articles":[]},{"title":"模块化","level":"2.1.3","depth":2,"anchor":"#modules","path":"webpk/README.md","ref":"webpk/README.md#modules","articles":[]},{"title":"模块化","level":"2.1.4","depth":2,"anchor":"#modules","path":"webpk/README.md","ref":"webpk/README.md#modules","articles":[]}]},"previous":{"title":"目录结构","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"tbfed-pagefooter":{"copyright":"Copyright&copy 2020 粤ICP备18045170号<a href='http://cholee.cn' target='_blank'>cholee</a>","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"plugins":["github","github-buttons","donate","anchor-navigation-ex","expandable-chapters","livereload"],"styles":{},"pluginsConfig":{"github":{"url":"https://github.com/Blankj"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"./source/images/donate.png","alipayText":" ","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"serif","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"github-buttons":{"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"cholee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端面试资料","language":"zh-hans","links":{"sidebar":{"个人博客":"http://cholee.cn"}},"gitbook":"3.2.3","description":"前端面试资料","theme-default":{"showLevel":true}},"file":{"path":"suanfa/README.md","mtime":"2020-08-17T10:01:48.242Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-17T10:25:21.024Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
