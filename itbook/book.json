@@ -1,7 +1,7 @@
 {
   "title": "前端面试资料",
-  "author": "cholee",
-  "description": "前端面试资料",
+  "author": "cholee(彩虹里)",
+  "description": "cholee整理的前端面试资料。html,css,javascript,vue,webpack等",
   "language": "zh-hans",
   "gitbook": "3.2.3",
   "styles": {},
@@ -10,26 +10,44 @@
   },
   "links": {
     "sidebar": {
-      "个人博客": "http://cholee.cn"
+      "cholee blog": "http://cholee.cn/zblog/"
     }
   },
-  "plugins": ["github", "github-buttons", "donate", "anchor-navigation-ex","expandable-chapters"],
+  "plugins": [
+    "github",
+    "splitter",
+    "-github-buttons",
+    "donate",
+    "prism",
+    "search-pro",
+    "fontsettings",
+    "livereload",
+    "multipart",
+    "anchor-navigation-ex",
+    "expandable-chapters",
+    "tbfed-pagefooter",
+    "copy-code-button"
+  ],
   "theme-default": {
     "showLevel": true
   },
-  "tbfed-pagefooter": {
-    "copyright": "Copyright&copy 2020 粤ICP备18045170号<a href='http://cholee.cn' target='_blank'>cholee</a>",
-    "modify_label": "修订时间：",
-    "modify_format": "YYYY-MM-DD HH:mm:ss"
-},
+
   "pluginsConfig": {
+    "prism": {
+      "css": ["prismjs/themes/prism-tomorrow.css"]
+    },
     "github": {
-      "url": "https://github.com/Blankj"
+      "url": "https://github.com/ChoLeeMax"
+    },
+    "fontsettings": {
+      "theme": "white",
+      "family": "sans",
+      "size": 2
     },
     "github-buttons": {
       "buttons": [
         {
-          "user": "Blankj",
+          "user": "ChoLeeMax",
           "repo": "glory",
           "type": "star",
           "size": "small",
@@ -38,10 +56,9 @@
       ]
     },
     "donate": {
-      "alipay": "./source/images/donate.png",
-      "title": "",
+      "wechat": "http://cholee.cn/images/donate/weichatpay.png",
       "button": "赞赏",
-      "alipayText": " "
+      "wechatText": "微信打赏"
     },
     "sharing": {
       "douban": false,
@@ -53,7 +70,7 @@
       "linkedin": false,
       "messenger": false,
       "pocket": false,
-      "qq": false,
+      "qq": true,
       "qzone": false,
       "stumbleupon": false,
       "twitter": false,
@@ -73,13 +90,12 @@
       ]
     },
     "anchor-navigation-ex": {
-      "showLevel": false
+      "showLevel": true
     },
-    "fontsettings": {
-      "theme": "white",
-      "family": "serif",
-      "size": 2
-    },
-    "favicon": {}
+    "tbfed-pagefooter": {
+      "copyright": "Copyright &copy cholee 2020 粤ICP备18045170号",
+      "modify_label": "",
+      "modify_format": ""
+    }
   }
 }

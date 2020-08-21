@@ -1,16 +1,19 @@
-# modules
+<!--
+ * @Descripttion: webpack章节整体结构
+ * @version: 
+ * @Author: cholee
+ * @Date: 2020-08-21 17:10:15
+ * @LastEditors: cholee
+ * @LastEditTime: 2020-08-21 17:23:24
+-->
+# 章节目录
 
-> 问题一：什么是模块化？
 
-```
-模块化是指把一个复杂的系统分解到多个模块以方便编码。
-```  
+# 传送门
 
->  问题二：为什么出现模块化
-
-很久以前，开发网页要通过命名空间的方式来组织代码，例如 jQuery 库把它的API都放在了window.$下，在加载完 jQuery 后其他模块再通过window.$去使用 jQuery。 这样做有很多问题，其中包括：
-- 命名空间冲突，两个库可能会使用同一个名称，例如Zepto也被放在window.$下； -
-- 无法合理地管理项目的依赖和版本； -
-- 无法方便地控制依赖的加载顺序。-
-
-当项目变大时这种方式将变得难以维护，需要用模块化的思想来组织代码。
+[webpackgit](https://github.com/webpack/webpack)  
+[webpack中文指南](https://www.w3cschool.cn/webpackguide/)  
+[webpack中文文档](http://webpack.html.cn/)  
+[webpack中文网](https://www.webpackjs.com)  
+[webpack菜鸟教程](https://www.runoob.com/w3cnote/webpack-tutorial.html)  
+[webpack慕课网](https://www.imooc.com/learn/802)
