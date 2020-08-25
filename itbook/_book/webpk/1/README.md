@@ -4,8 +4,9 @@
  * @Author: cholee
  * @Date: 2020-08-17 17:32:44
  * @LastEditors: cholee
- * @LastEditTime: 2020-08-21 17:28:56
+ * @LastEditTime: 2020-08-25 14:01:08
 -->
+
 # modules
 
 > 问题一：什么是模块化？
@@ -39,9 +40,7 @@
 
 > 问题一：构建的作用及常见功能是什么？
 
-
-构建就是当源代码无法直接运行时，通过转化将源代码转换成可执行的 JavaScript、Css、HTML代码。
-
+构建就是当源代码无法直接运行时，通过转化将源代码转换成可执行的 JavaScript、Css、HTML 代码。
 
 ##### 一般包括如下内容：
 
@@ -57,12 +56,12 @@
 
 > 问题一：Loader 机制的作用是什么？
 
-  Loader 可以看作具有文件转换功能的翻译员，配置里的 module.rules 数组配置了一组规则，告诉 Webpack 在遇到哪些文件时使用哪些 Loader 去加载和转换。
+Loader 可以看作具有文件转换功能的翻译员，配置里的 module.rules 数组配置了一组规则，告诉 Webpack 在遇到哪些文件时使用哪些 Loader 去加载和转换。
 
 > 问题二：css-loader 与 style-loader 的作用
 
-  css-loader 读取 CSS 文件  
-  style-loader 把 CSS 内容注入到 JavaScript 里
+css-loader 读取 CSS 文件  
+ style-loader 把 CSS 内容注入到 JavaScript 里
 
 > 问题三：配置 Loader 时需要注意的地方？
 
@@ -74,35 +73,58 @@
 > 问题一：Plugin（插件）的作用是什么
 
 Plugin 是用来扩展 Webpack 功能的，通过在构建流程里注入钩子实现，它给 Webpack 带来了很大的灵活性。  
-Webpack 是通过plugins属性来配置需要使用的插件列表的。plugins属性是一个数组，里面的每一项都是插件的一个实例，在实例化一个组件时可以通过构造函数传入这个组件支持的配置属性。
+Webpack 是通过 plugins 属性来配置需要使用的插件列表的。plugins 属性是一个数组，里面的每一项都是插件的一个实例，在实例化一个组件时可以通过构造函数传入这个组件支持的配置属性。
 
-> 问题二：ExtractTextPlugin插件的作用
+> 问题二：什么是 Plugin？
 
-ExtractTextPlugin插件的作用是提取出 JavaScript 代码里的 CSS 到一个单独的文件。
-对此你可以通过插件的filename属性，告诉插件输出的 CSS 文件名称是通过[name]_[contenthash:8].css字符串模版生成的，里面的[name]代表文件名称，[contenthash:8]代表根据文件内容算出的8位 hash 值， 还有很多配置选项可以在ExtractTextPlugin的主页上查到。
+Plugin 用于扩展 Webpack 功能，各种各样的 Plugin 几乎让 Webpack 可以做任何构建相关的事情。
 
-# devserver  
+> 问题三：Plugin 配置？
 
-> 问题一：DevServer开发工具
+Plugin 的配置很简单，plugins 配置项接受一个数组，数组里每一项都是一个要使用的 Plugin 的实例，Plugin 需要的参数通过构造函数传入。
+
+```js
+const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+
+module.exports = {
+  plugins: [
+    // 所有页面都会用到的公共代码提取到 common 代码块中
+    new CommonsChunkPlugin({
+      name: "common",
+      chunks: ["a", "b"],
+    }),
+  ],
+};
+```
+
+> 问题四：ExtractTextPlugin 插件的作用
+
+ExtractTextPlugin 插件的作用是提取出 JavaScript 代码里的 CSS 到一个单独的文件。
+对此你可以通过插件的 filename 属性，告诉插件输出的 CSS 文件名称是通过[name]\_[contenthash:8].css 字符串模版生成的，里面的[name]代表文件名称，[contenthash:8]代表根据文件内容算出的 8 位 hash 值， 还有很多配置选项可以在 ExtractTextPlugin 的主页上查到。
+
+# devserver
+
+> 问题一：DevServer 开发工具
 
 DevServer 会启动一个 HTTP 服务器用于服务网页请求，同时会帮助启动 Webpack ，并接收 Webpack 发出的文件更变信号，通过 WebSocket 协议自动刷新网页做到实时预览。  
-安装DevServer
+安装 DevServer
 
 ```js
 npm i -D webpack-dev-server
 ```
+
 > 问题二：实时预览
 
-Webpack 在启动时可以开启监听模式，开启监听模式后 Webpack 会监听本地文件系统的变化，发生变化时重新构建出新的结果。Webpack 默认是关闭监听模式的，你可以在启动 Webpack 时通过webpack --watch来开启监听模式。
+Webpack 在启动时可以开启监听模式，开启监听模式后 Webpack 会监听本地文件系统的变化，发生变化时重新构建出新的结果。Webpack 默认是关闭监听模式的，你可以在启动 Webpack 时通过 webpack --watch 来开启监听模式。
 通过 DevServer 启动的 Webpack 会开启监听模式，当发生变化时重新执行完构建后通知 DevServer。 DevServer 会让 Webpack 在构建出的 JavaScript 代码里注入一个代理客户端用于控制网页，网页和 DevServer 之间通过 WebSocket 协议通信， 以方便 DevServer 主动向客户端发送命令。 DevServer 在收到来自** Webpack 的文件变化**通知时通过注入的客户端控制网页刷新。
 
 > 问题三：什么是模块热替换？
 
 模块热替换能做到在不重新加载整个网页的情况下，通过将被更新过的模块替换老的模块，再重新执行一次来实现实时预览。  
-模块热替换相对于默认的刷新机制能提供更快的响应和更好的开发体验。 模块热替换默认是关闭的，要开启模块热替换，你只需在启动 DevServer 时带上--hot参数，重启 DevServer 后再去更新文件就能体验到模块热替换的神奇了。
+模块热替换相对于默认的刷新机制能提供更快的响应和更好的开发体验。 模块热替换默认是关闭的，要开启模块热替换，你只需在启动 DevServer 时带上--hot 参数，重启 DevServer 后再去更新文件就能体验到模块热替换的神奇了。
 
-> 问题四：什么是Source Map 及其使用
+> 问题四：什么是 Source Map 及其使用
 
-Source Map能够提供将压缩文件恢复到源文件原始位置的映射代码的方式。这意味着你可以在优化压缩代码后轻松的进行调试。在编译器输出的代码上进行断点调试是一件辛苦和不优雅的事情， 调试工具可以通过Source Map映射代码，让你在源代码上断点调试。
+Source Map 能够提供将压缩文件恢复到源文件原始位置的映射代码的方式。这意味着你可以在优化压缩代码后轻松的进行调试。在编译器输出的代码上进行断点调试是一件辛苦和不优雅的事情， 调试工具可以通过 Source Map 映射代码，让你在源代码上断点调试。
 
-Source Map使用：Webpack 支持生成 Source Map，只需在启动时带上--devtool source-map参数。 加上参数重启 DevServer 后刷新页面，再打开 Chrome 浏览器的开发者工具，就可在 Sources 栏中看到可调试的源代码了。
+Source Map 使用：Webpack 支持生成 Source Map，只需在启动时带上--devtool source-map 参数。 加上参数重启 DevServer 后刷新页面，再打开 Chrome 浏览器的开发者工具，就可在 Sources 栏中看到可调试的源代码了。
